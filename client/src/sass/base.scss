@@ -1,0 +1,39 @@
+/*=====================================
+=            Vendor Imprts            =
+=====================================*/
+
+@import './vendor/bootstrap/bootstrap';
+@import './vendor/font_awesome/font-awesome';
+@import './vendor/sweetalert/sweetalert2';
+// @import './vendor/slick/slick';
+// @import './vendor/slick/slick-theme';
+// @import './vendor/react_fixed_table/react_fixed_table';
+
+@import './overrides';
+@import './fonts';
+
+/*=====  End of Vendor Imprts  ======*/
+
+/*=================================
+=            Variables            =
+=================================*/
+
+@import './variables/variables';
+
+@import './generators';
+@import './animations';
+@import './utility';
+
+@import './css_transitions';
+
+/*=====  End of Variables  ======*/
+
+/*=========================================
+=            Global Components            =
+=========================================*/
+
+@import './app_content';
+
+/*=====  End of Global Components  ======*/
+
+@import './home';

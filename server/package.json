@@ -1,0 +1,38 @@
+{
+  "name": "ijoin",
+  "version": "0.0.1",
+  "description": "iJoin is a community for event creators and attendees to find, and chat about, local events.",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryandbor/ijoin.git"
+  },
+  "author": "Bryan Bor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bryandbor/ijoin/issues"
+  },
+  "homepage": "https://github.com/bryandbor/ijoin#readme",
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "express-validator": "^2.20.10",
+    "mongodb": "^2.2.10",
+    "mongoose": "^4.6.2",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "socket.io": "^1.6.0"
+  }
+}

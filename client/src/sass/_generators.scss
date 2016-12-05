@@ -1,0 +1,97 @@
+@mixin animation ($animation, $iterations, $origin) {
+	animation: $animation;
+	animation-iteration-count: $iterations;
+	transform-origin: $origin;
+
+	-webkit-animation: $animation;
+	-webkit-animation-iteration-count: $iterations;
+	-webkit-transform-origin: $origin;
+	
+	-moz-animation: $animation;
+	-moz-animation-iteration-count: $iterations;
+	-moz-transform-origin: $origin;
+	
+	-o-animation: $animation;
+	-o-animation-iteration-count: $iterations;
+	-o-transform-origin: $origin;
+	
+	-ms-animation: $animation;
+	-ms-animation-iteration-count: $iterations;
+	-ms-transform-origin: $origin;
+}
+
+@mixin transform ($transforms...) {
+	transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+}
+
+@mixin transition ($transition...) {
+	transition: $transition;
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	-ms-transition: $transition;
+}
+
+@mixin centerAll () {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	@include transform(translate(-50%, -50%));
+}
+
+@mixin transitionAll () {
+	@include transition (all $time-std);
+}
+
+@mixin backgroundCentered () {
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@mixin filter ($effect...) {
+	filter: $effect;
+	-webkit-filter: $effect;
+}
+
+@mixin ellipsis () {
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+  -webkit-animation: $animations;
+  -moz-animation:    $animations;
+  -o-animation:      $animations;
+  animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
