@@ -12,12 +12,6 @@
 @import './overrides';
 @import './fonts';
 
-/*=====  End of Vendor Imprts  ======*/
-
-/*=================================
-=            Variables            =
-=================================*/
-
 @import './variables/variables';
 
 @import './generators';
@@ -25,15 +19,3 @@
 @import './utility';
 
 @import './css_transitions';
-
-/*=====  End of Variables  ======*/
-
-/*=========================================
-=            Global Components            =
-=========================================*/
-
-@import './app_content';
-
-/*=====  End of Global Components  ======*/
-
-@import './home';

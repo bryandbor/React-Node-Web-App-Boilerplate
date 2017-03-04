@@ -7870,48 +7870,12 @@ body.swal2-iosfix {
   src: url("./fonts/Lato-Regular.ttf"); }
 
 @font-face {
-  font-family: 'Lato';
-  src: url("./fonts/Lato-Bold.ttf");
-  font-weight: bold; }
-
-@font-face {
-  font-family: 'Lato';
-  src: url("./fonts/Lato-Italic.ttf");
-  font-style: italic; }
-
-@font-face {
-  font-family: 'Lato';
-  src: url("./fonts/Lato-BoldItalic.ttf");
-  font-weight: bold;
-  font-style: italic; }
-
-@font-face {
   font-family: 'Roboto';
   src: url("./fonts/Roboto-Regular.ttf"); }
-
-@font-face {
-  font-family: 'Roboto';
-  src: url("./fonts/Roboto-Bold.ttf");
-  font-weight: bold; }
-
-@font-face {
-  font-family: 'Roboto';
-  src: url("./fonts/Roboto-Italic.ttf");
-  font-style: italic; }
-
-@font-face {
-  font-family: 'Roboto';
-  src: url("./fonts/Roboto-BoldItalic.ttf");
-  font-weight: bold;
-  font-style: italic; }
 
 body {
   font-family: lato, roboto, sans-serif; }
 
-/*=====  End of Vendor Imprts  ======*/
-/*=================================
-=            Variables            =
-=================================*/
 .hexagon {
   overflow: hidden;
   visibility: hidden;
@@ -8008,8 +7972,3 @@ body {
 =            Example CSSTransitionGroup Classes            =
 ==========================================================*/
 /*=====  End of Example CSSTransitionGroup Classes  ======*/
-/*=====  End of Variables  ======*/
-/*=========================================
-=            Global Components            =
-=========================================*/
-/*=====  End of Global Components  ======*/

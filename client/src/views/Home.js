@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { Link } from 'react-router';
+
 import {  } from '../strings/strings';
 
 class Home extends Component {
@@ -9,7 +11,12 @@ class Home extends Component {
 	render() {
 		return (
 			<div id="home">
-				Home
+				<h4>
+					Home
+				</h4>
+				<Link to="/counter">
+					To Counter
+				</Link>
 			</div>
 		);
 	}

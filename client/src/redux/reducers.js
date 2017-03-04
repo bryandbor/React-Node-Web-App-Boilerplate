@@ -2,11 +2,13 @@ import { combineReducers } from 'redux';
 import { reducer as notificationsReducer } from 'reapop';
 
 /*----------  Organization Global Results  ----------*/
-// eslint-disable-next-line
-import example from './reducers/example';
+
+import counter from './counter/reducers';
 
 const rootReducer = combineReducers({
-  notifications: notificationsReducer
+  notifications: notificationsReducer(),
+
+  counter,
 });
 
 export default rootReducer;

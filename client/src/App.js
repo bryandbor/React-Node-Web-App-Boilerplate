@@ -1,47 +1,67 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import NotificationsSystem from 'reapop';
-import theme from 'reapop-theme-wybo';
+/*=======================================
+=            Library Imports            =
+=======================================*/
 
-import {
-	home
-} from './constants/pages';
+// eslint-disable-next-line
+import React, { Component, PropTypes } from 'react';
+import { Router, Route, IndexRedirect, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import createLogger from 'redux-logger';
+import { createStore, compose, applyMiddleware } from 'redux';
 
-import notifDefaults from './constants/notification_defaults';
+/*=====  End of Library Imports  ======*/
 
-class App extends Component {
-	static relativePaths = {
-		[home]: '/',
-	};
-	componentDidMount() {
+/*==============================================
+=            Initialize Redux Store            =
+==============================================*/
+
+const loggerMiddleware = createLogger();
+
+import rootReducer from './redux/reducers';
+
+const createStoreWithMiddleware = compose(
+	process.env.NODE_ENV === 'production' || true ?
+	applyMiddleware(
+		thunk
+	) :
+	applyMiddleware(
+		thunk,
+		loggerMiddleware
+	)
+)(createStore);
+
+let store = createStoreWithMiddleware(rootReducer, {});
+
+/*=====  End of Initialize Redux Store  ======*/
+
+/*====================================
+=            View Imports            =
+====================================*/
+
+import Root from './Root';
+
+import Home from './views/Home';
+import Counter from './views/Counter';
+
+import NoMatch from './views/NoMatch';
+
+/*=====  End of View Imports  ======*/
+
+export default class App extends Component {
+	render() {
+	  return (
+			<Provider store={store}>
+			  <Router history={browserHistory}>
+			  	<Route path={'/'} component={Root}>
+				  	<IndexRedirect to="/home"/>
+				  	<Route path="/home" component={Home}/>
+				  	<Route path="counter" component={Counter}/>
+				  	
+				  	<Route path="*" component={NoMatch}/>
+			  	</Route>
+			  </Router>
+		  </Provider>
+	  );
 	}
-	componentDidUpdate(prevProps, prevState) {
-	}
-  render() {
-  	let contentClasses = [];
-
-    return (
-      <div id="App">
-        <NotificationsSystem theme={theme} defaultValues={notifDefaults}/>
-    		<div id="app-content" className={contentClasses.join(' ')}>
-	      	{this.props.children}
-      	</div>
-      </div>
-    );
-  }
 }
-
-const mapStateToProps = (state) => {
-	return {
-	};
-}
-
-const mapDispatchToProps = (dispatch) => {
-	return {
-	};
-}
-
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(App);
