@@ -2,15 +2,18 @@ var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-const DB_NAME = require('./constants/db').DB_NAME;
-mongoose.connect('mongodb://localhost:27017/' + DB_NAME);
-var db = mongoose.connection;
+module.exports = function (dbName) {
+	mongoose.connect('mongodb://localhost:27017/' + dbName);
 
-db.once('open', function(){
-	// do anything that needs to be done with the database
-});
-db.on('error', function(err){
-	console.log('Error:', err);
-});
+	var db = mongoose.connection;
 
-exports.db = db;
+	db.once('open', function(){
+		console.log('Database connected');
+		// do anything that needs to be done with the database
+	});
+	db.on('error', function(err){
+		console.warn('Error:', err);
+	});
+
+	return db;
+};
