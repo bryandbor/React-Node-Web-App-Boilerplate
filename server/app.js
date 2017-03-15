@@ -2,8 +2,29 @@
 var express = require('express'),
 	bodyParser = require('body-parser');
 
+const DB_NAME = 'DB_NAME_HERE';
 var app = express();
-var db = require('./connect')('DB_NAME');
+let db = null;
+
+app.use(function (req, res, next) {
+	db = require('./connect')(DB_NAME);
+	
+  // action after response
+  var afterResponse = function() {
+    // any other clean ups
+    mongoose.connection.close(function () {
+      console.log('Mongoose connection disconnected');
+    });
+  }
+  
+  // hooks to execute after response
+  res.on('finish', afterResponse);
+  res.on('close', afterResponse);
+
+  // do more stuff
+
+  next();
+});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
