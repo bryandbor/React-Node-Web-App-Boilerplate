@@ -1,6 +1,7 @@
 {
   "name": "Z-Admin",
-  "version": "0.1.0",
+  "description": "Boilerplate for Application using: React + Redux <-> NodeJS + Express + Mongoose <-> MongoDB",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",

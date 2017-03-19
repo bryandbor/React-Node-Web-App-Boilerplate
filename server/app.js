@@ -1,6 +1,7 @@
 // Dependencies
 var express = require('express'),
-	bodyParser = require('body-parser');
+	bodyParser = require('body-parser'),
+  mongoose = require('mongoose');
 
 const DB_NAME = 'DB_NAME_HERE';
 var app = express();

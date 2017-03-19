@@ -1,7 +1,7 @@
 {
   "name": "ijoin",
-  "version": "0.0.1",
-  "description": "iJoin is a community for event creators and attendees to find, and chat about, local events.",
+  "version": "0.0.2",
+  "description": "Boilerplate for Application using: React + Redux <-> NodeJS + Express + Mongoose <-> MongoDB",
   "main": "app.js",
   "directories": {
     "doc": "docs"
@@ -26,6 +26,7 @@
     "express": "^4.15.0",
     "mongodb": "^2.2.24",
     "mongoose": "^4.8.5",
+    "mongoose-paginate": "^5.0.3",
     "socket.io": "^1.7.3"
   }
 }
